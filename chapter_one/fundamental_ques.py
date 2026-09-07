@@ -83,3 +83,13 @@ def grow(arr):
 # --------------------------------------------------------------------
 def odd_or_even(arr):
     return "even" if sum(arr)%2==0 else "odd"
+# --------------------------------------------------------------------
+def is_square(n):    
+    
+    return True if n>=0 and (n**0.5).is_integer() else False
+# --------------------------------------------------------------------
+
+def xo(s):
+    s=s.lower()
+    return list(s).count("x")==list(s).count("o")
+
