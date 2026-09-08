@@ -24,5 +24,5 @@ def is_valid_walk(walk):
             y=y-1
     return True if x==0 and y==0 else False
 # --------------------------------------------
-def find_outlier(integers):
-    if(integers[1]%2==0 and integers[0]%2==0 or integers[2]%2==0)
+# def find_outlier(integers):
+    # if(integers[1]%2==0 and integers[0]%2==0 or integers[2]%2==0)
