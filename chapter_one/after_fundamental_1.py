@@ -41,5 +41,22 @@ def is_valid_walk(walk):
 # Note:
 # The ball can only be seen if the height of the rebounding ball is strictly greater than the window parameter.
 def bouncing_ball(h, bounce, window):
-    # your code
-    return -1
+    if h <= 0 or bounce <= 0 or bounce >= 1 or window >= h:
+        return -1
+    count = 1
+    while h * bounce > window:
+        count += 2
+        h *= bounce
+    return count
+
+# --------------------------------------------
+# --------------------------------------------
+def order(sentence):
+    if sentence == "":
+        return ""
+    words = sentence.split()
+    sorted_words = sorted(words, key=lambda x: sorted(x))
+    return " ".join(sorted_words)
+# --------------------------------------------
+def to_camel_case(text):
+    return ''.join(word.capitalize() if i != 0 else word for i, word in enumerate(text.replace('-', ' ').replace('_', ' ').split()))
