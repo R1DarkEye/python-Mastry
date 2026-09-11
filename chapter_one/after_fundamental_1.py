@@ -50,7 +50,6 @@ def bouncing_ball(h, bounce, window):
     return count
 
 # --------------------------------------------
-# --------------------------------------------
 def order(sentence):
     if sentence == "":
         return ""
@@ -60,3 +59,21 @@ def order(sentence):
 # --------------------------------------------
 def to_camel_case(text):
     return ''.join(word.capitalize() if i != 0 else word for i, word in enumerate(text.replace('-', ' ').replace('_', ' ').split()))
+
+# --------------------------------------------
+
+def spin_words(sentence):
+    return ' '.join([word[::-1] if len(word) >=5 else word for word in sentence.split()])
+
+spin_words("Hey fellow warriors")
+# --------------------------------------------
+def rot13(message):
+    result = ""
+    for char in message:
+        if 'a' <= char <= 'z':
+            result += chr((ord(char) - ord('a') + 13) % 26 + ord('a'))
+        elif 'A' <= char <= 'Z':
+            result += chr((ord(char) - ord('A') + 13) % 26 + ord('A'))
+        else:
+            result += char
+    return result
