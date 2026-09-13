@@ -65,7 +65,7 @@ def to_camel_case(text):
 def spin_words(sentence):
     return ' '.join([word[::-1] if len(word) >=5 else word for word in sentence.split()])
 
-spin_words("Hey fellow warriors")
+# spin_words("Hey fellow warriors")
 # --------------------------------------------
 def rot13(message):
     result = ""

@@ -87,9 +87,25 @@ def odd_or_even(arr):
 def is_square(n):    
     
     return True if n>=0 and (n**0.5).is_integer() else False
-# --------------------------------------------------------------------
 
+# --------------------------------------------------------------------
 def xo(s):
     s=s.lower()
     return list(s).count("x")==list(s).count("o")
 
+# --------------------------------------------------------------------
+def descending_order(num):
+    return int("".join(sorted(str(num),reverse=True)))
+# --------------------------------------------------------------------
+
+def get_middle(s):
+    if len(s)%2==0:
+        return s[len(s)//2-1:len(s)//2+1]
+    else:
+        return s[len(s)//2]
+# --------------------------------------------------------------------
+def find_even_index(arr):
+    for i in range(len(arr)):
+        if sum(arr[:i])==sum(arr[i+1:]):
+            return i
+    return -1
