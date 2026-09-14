@@ -109,3 +109,10 @@ def find_even_index(arr):
         if sum(arr[:i])==sum(arr[i+1:]):
             return i
     return -1
+# --------------------------------------------------------------------
+def make_upper_case(s):
+    return s.upper()
+# --------------------------------------------------------------------
+def century(year):
+    # Finish this :)
+    return year//100 if year%100==0 else year//100+1
