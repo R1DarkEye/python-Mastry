@@ -116,3 +116,11 @@ def make_upper_case(s):
 def century(year):
     # Finish this :)
     return year//100 if year%100==0 else year//100+1
+# --------------------------------------------------------------------
+def pig_it(text):
+    #your code here
+    s=text.split(" ")
+    for i in range(len(s)):
+        if s[i].isalpha():
+            s[i]=s[i][1:]+s[i][0]+"ay"
+    return " ".join(s)

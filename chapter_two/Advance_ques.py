@@ -13,3 +13,6 @@ def plus(number): return lambda x: x + number
 def minus(number): return lambda x: x - number
 def times(number): return lambda x: x * number
 def divided_by(number): return lambda x: x // number
+
+# =================================================
+# def same_structure_as(original,other):
