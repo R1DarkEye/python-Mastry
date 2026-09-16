@@ -15,4 +15,20 @@ def times(number): return lambda x: x * number
 def divided_by(number): return lambda x: x // number
 
 # =================================================
-# def same_structure_as(original,other):
+def same_structure_as(original,other): #will improve it tomorrow or else at least think of solution
+    if(len(original)!=len(other)):
+         return False
+    ori_size=[]
+    other_size=[]
+    for i in original:
+        if(type(i)==type(original)):
+            ori_size.append(len(i))
+        else:
+            ori_size.append(1)
+    for j in other:
+            if(type(j)==type(original)):
+                other_size.append(len(j))
+            else:
+                other_size.append(1)
+    return other_size==ori_size
+
