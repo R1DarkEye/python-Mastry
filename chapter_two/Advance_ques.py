@@ -32,3 +32,13 @@ def same_structure_as(original,other): #will improve it tomorrow or else at leas
                 other_size.append(1)
     return other_size==ori_size
 
+def same_structure_as_1(original,other):
+    if len(original) != len(other):
+        return False
+    for i in range(len(original)):
+        if isinstance(original[i], list) and isinstance(other[i], list):
+            if not same_structure_as(original[i], other[i]):
+                return False
+        elif isinstance(original[i], list) or isinstance(other[i], list):
+            return False
+    return True
