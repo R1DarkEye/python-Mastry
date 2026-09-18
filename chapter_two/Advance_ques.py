@@ -1,3 +1,7 @@
+import re
+from collections import Counter
+
+
 def zero(operation=None): return 0 if operation is None else operation(0)
 def one(operation=None): return 1 if operation is None else operation(1)
 def two(operation=None): return 2 if operation is None else operation(2)
@@ -32,6 +36,7 @@ def same_structure_as(original,other): #will improve it tomorrow or else at leas
                 other_size.append(1)
     return other_size==ori_size
 
+# =================================================
 def same_structure_as_1(original,other):
     if len(original) != len(other):
         return False
@@ -42,3 +47,11 @@ def same_structure_as_1(original,other):
         elif isinstance(original[i], list) or isinstance(other[i], list):
             return False
     return True
+
+# =================================================
+def top_3_words(text):
+    import re
+    from collections import Counter
+
+    words = re.findall(r"[a-z']*[a-z][a-z']*", text.lower())
+    return [word for word, _ in Counter(words).most_common(3)]
