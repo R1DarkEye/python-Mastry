@@ -104,3 +104,23 @@ def parse_int(string):
             current = 0
 
     return total + current
+
+def score(dice):
+    from collections import Counter
+    counts = Counter(dice)
+    score = 0
+
+    # Check for three of a kind
+    for num in range(1, 7):
+        if counts[num] >= 3:
+            if num == 1:
+                score += 1000
+            else:
+                score += num * 100
+            counts[num] -= 3
+
+    # Add points for remaining ones and fives
+    score += counts[1] * 100
+    score += counts[5] * 50
+
+    return score
