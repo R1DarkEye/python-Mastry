@@ -124,3 +124,23 @@ def score(dice):
     score += counts[5] * 50
 
     return score
+
+def tree_by_levels(node):
+    if node is None:
+        return []
+
+    values = []
+    queue = [node]
+    index = 0
+
+    while index < len(queue):
+        current = queue[index]
+        index += 1
+        values.append(current.value)
+
+        if current.left is not None:
+            queue.append(current.left)
+        if current.right is not None:
+            queue.append(current.right)
+
+    return values
