@@ -144,3 +144,15 @@ def tree_by_levels(node):
             queue.append(current.right)
 
     return values
+def exp_sum(n):
+    if n < 0:
+        return 0
+
+    partitions = [0] * (n + 1)
+    partitions[0] = 1
+
+    for part in range(1, n + 1):
+        for total in range(part, n + 1):
+            partitions[total] += partitions[total - part]
+
+    return partitions[n]
