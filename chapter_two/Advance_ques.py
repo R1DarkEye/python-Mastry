@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 
+# working on something
 
 def zero(operation=None): return 0 if operation is None else operation(0)
 def one(operation=None): return 1 if operation is None else operation(1)
