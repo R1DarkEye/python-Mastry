@@ -157,3 +157,35 @@ def exp_sum(n):
             partitions[total] += partitions[total - part]
 
     return partitions[n]
+
+class VigenereCipher(object):
+    def __init__(self, key, alphabet):
+        self.key = key
+        self.alphabet = alphabet
+        self.key_indices = [self.alphabet.index(k) for k in self.key]
+    def encode(self, text):
+        encoded_text = []
+        key_length = len(self.key_indices)
+        for i, char in enumerate(text):
+            if char in self.alphabet:
+                text_index = self.alphabet.index(char)
+                key_index = self.key_indices[i % key_length]
+                encoded_index = (text_index + key_index) % len(self.alphabet)
+                encoded_text.append(self.alphabet[encoded_index])
+            else:
+                encoded_text.append(char)
+        return ''.join(encoded_text)
+    
+    def decode(self, text):
+        decoded_text = []
+        key_length = len(self.key_indices)
+        for i, char in enumerate(text):
+            if char in self.alphabet:
+                text_index = self.alphabet.index(char)
+                key_index = self.key_indices[i % key_length]
+                decoded_index = (text_index - key_index) % len(self.alphabet)
+                decoded_text.append(self.alphabet[decoded_index])
+            else:
+                decoded_text.append(char)
+        return ''.join(decoded_text)
+        
